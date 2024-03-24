@@ -1,11 +1,15 @@
-<html>
+<html><title>CarNews</title>
 <head>
 
     <link rel="stylesheet" type="text/css" href="background.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
+        navbar-brand {
+            color: gray; 
+        }
         
         
-
+        body{background-color: gray;}
         div.first {
                     position: relative;
                     width: 80%;
@@ -45,6 +49,41 @@
 
 
 <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="margin-right: auto;">
+          <a class="navbar-brand" href="carAdvisor_index.html" >Car Advisor</a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="carAdvisor_index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="carConsulting.html">Car Consulting</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="car_selling.html">Car Selling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="car_news.html">Car News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="AboutUS.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactUsPage.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    
     
 
 
@@ -125,39 +164,40 @@
 <hr width="60%" class="margin" style="color: white; size: 5px;">
 
        
-<table class="margin">
-    <tr>
-        <th>
-            <div style="font-size: 20px; color: white; text-align: left; margin-right: 500px;" >
-            <ul>
-                <li>Home page</li>
-                <li>Car consulting</li>
-                <li>Car Selling</li>
-                <li>Car news</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-            </ul>
-
+<div class="footer" style="background-color: #363636; padding: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div style="font-size: 20px; color: white;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="carAdvisor_index.html" style="color: white;">Home page</a></li>
+                        <li><a href="carConsulting.html" style="color: white;">Car consulting</a></li>
+                        <li><a href="car_selling.html" style="color: white;">Car Selling</a></li>
+                        <li><a href="car_news.html" style="color: white;">Car news</a></li>
+                        <li><a href="AboutUS.html" style="color: white;">About Us</a></li>
+                        <li><a href="contactUsPage.html" style="color: white;">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-        </th>
-        <td>
-            <pre style="font-family:Arial, Helvetica, sans-serif; color: white;">
-            <strong>  
-                Sultan Qaboos University
-                College Of Science
-                Computer Science Department
-                COMP3700 SP24 Project
-                Members:</strong>
-                Mohammed AL TAMAMI 
-                Mohammed AL RIYAMI 
-                Mohammed  AL HARTHY 
-            </pre>
-        </td>
-    </tr>
+            <div class="col-md-6">
+                <div style="font-family: Arial, Helvetica, sans-serif; color: white; line-height: 1.5;">
+                    <strong>Sultan Qaboos University</strong><br>
+                    <a href="https://www.squ.edu.om/" style="color: white;">Sultan Qaboos University</a><br>
+                    <a href="https://www.squ.edu.om/science" style="color: white;">College Of Science</a><br>
+                    <a href="https://www.squ.edu.om/science/Departments/Computer-Science" style="color: white;">Computer Science Department</a><br>
+                    COMP3700 SP24 Project<br>
+                    Members:<br>
+                    Mohammed AL TAMAMI<br>
+                    Mohammed AL RIYAMI<br>
+                    Mohammed AL HARTHY<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</table>
       
-        
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
