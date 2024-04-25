@@ -1,0 +1,139 @@
+bg-img {
+    height: 10vh;
+    width: 10vw;
+    object-fit: cover;
+    filter: brightness(10,10);
+    position: absolute;
+    background-position: center bottom;
+}
+
+body{
+    background-color: rgb(20, 20, 20);
+            color: gainsboro;
+            font-family: sans-serif;
+}
+
+/*table style*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid white; /* White borders */
+  }
+  th, td {
+    border: 1px solid white; /* White borders */
+    padding: 8px;
+    text-align: left;
+    color: white; /* White text color */
+  }
+  th {
+    background-color: black; /* Black background color for header */
+  }
+
+
+
+.scroll{
+    white-space: nowrap;
+    margin: 0 2em;
+}
+
+.scroll div{
+    display: flex;
+    gap: 2em;
+}
+
+.scroll p{
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 0px;
+}
+
+.LeftToRight{
+    animation: LeftToRight 5s infinite linear;
+}
+
+@keyframes LeftToRight{
+    from{
+        transform: translate(-100%);
+    }
+    to{
+        transform: translate(100%);
+    }
+}
+
+
+@keyframes scroll {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(calc(-300px * 6));
+    }
+}
+
+.slider{
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-track{
+    display: flex;
+    width: calc(300px * 6);
+    animation:scroll 40s linear infinite;
+}
+
+.slide{
+    height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transition: transform 1%;
+}
+img:hover{
+    transform: translateZ(20px);
+}
+
+.slide-track:hover{
+    animation-play-state: paused;
+}
+
+/*shadows*/
+
+.slider::before,
+.slider::after {
+
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+}
+
+.slider::before{
+    left: 0;
+    top: 0;
+}
+
+.slider::after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+

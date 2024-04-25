@@ -1,0 +1,26 @@
+const words = [ // list of words that will be used in the game
+                // hint to help the user solving the game
+    { word: "toyota", hint: "a japanese car company" },
+    { word: "ford", hint: "an american car company" },
+    { word: "tire", hint: "an important part in the car to move" },
+    { word: "subaru", hint: "a japanese car company" },
+    { word: "mercedes", hint: "a german car company" },
+    { word: "chevrolet", hint: "an american car company" },
+    { word: "bmw", hint: "a german car company" },
+    { word: "landrover", hint: "a british car company" },
+    { word: "hood", hint: "the front cover of the engine" },
+    { word: "lexus", hint: "a japanese car company" },
+    { word: "mustang", hint: "an american muscle car" },
+    { word: "engine", hint: "the heart of the car" },
+    { word: "fuel", hint: "an important liquid for engine to work" },
+    { word: "mitsubishi", hint: "a japanese car company" },
+    { word: "ferrari", hint: "an italian car company" },
+    { word: "dodge", hint: "an american car company" },
+    { word: "rims", hint: "a part in the car that holds the tires" },
+    { word: "hyundai", hint: "a korean car company" },
+    { word: "honda", hint: "A japanese car company" },
+    { word: "nissan", hint: "a japanese car company" },
+    { word: "porsche", hint: "A geman car company" },
+    { word: "jeep", hint: "an american car company" },
+    { word: "audi", hint: "a german car company" }
+];

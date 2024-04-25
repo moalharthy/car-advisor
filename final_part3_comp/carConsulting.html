@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Consulting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar-brand {
+            color: #555;
+        }
+
+        .hero-section {
+            background-image: url('road_theme.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Adjust as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form h2 {
+            margin-top: 0;
+        }
+
+        select,
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            background-color: #363636;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid" style="margin-right: auto;" >
+            <a class="navbar-brand" href="index.html">Car Advisor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav" >
+                <ul class="navbar-nav ms-auto" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carConsulting.html">Car Consulting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="car_selling.html">Car Selling</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="car_news.html">Car News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUS.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactUsPage.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedBack.html">Questionnaire Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculation_page.html">Calculation Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="funPange.html">Fun page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.html">sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div>
+            <h1>Car Consulting</h1>
+            <p>Your advisor into the world of cars</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <blockquote class="text-center fs-5 text-muted mb-4">Start the journey of finding your best-fit car by taking a simple test consisting of easy questions. Our experts will analyze your answers and suggest the top 3 cars that fit your purpose, budget, and style.</blockquote>
+                <div class="text-center">
+                    <img src="carshow.jpg" class="img-fluid rounded" alt="car show photo">
+                </div>
+                <form>
+                    <h2>Car Category</h2>
+                    <select name="question1">
+                        <option value="SPORT">SPORT</option>
+                        <option value="ECONOMY">ECONOMY</option>
+                        <option value="OFF_ROAD">OFF ROAD</option>
+                        <option value="Trucks">Trucks</option>
+                        <option value="LUXURY">LUXURY</option>
+                        <option value="SUV">SUV</option>
+                    </select>
+
+                    <h2>Country Of Manufacture</h2>
+                    <select name="question2">
+                        <option value="USA">USA</option>
+                        <option value="JAPAN">JAPAN</option>
+                        <option value="SOUTH_KOREA">SOUTH KOREA</option>
+                        <option value="GERMANY">GERMANY</option>
+                        <option value="UK">UK</option>
+                    </select>
+
+                    <h2>Transmission Type</h2>
+                    <select name="question3">
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
+
+                    <h2>Price Range</h2>
+                    <select name="question4">
+                        <option value="low">Low (less than 10k OMR)</option>
+                        <option value="Medium">Medium(10k to 25k OMR)</option>
+                        <option value="High">High(25k+ OMR)</option>
+                    </select>
+
+                    <h2>Special/Exclusive Cars</h2>
+                    <select name="question5">
+                        <option value="classic">Classic</option>
+                        <option value="custom">Custom</option>
+                        <option value="collectors">Collectors</option>
+                        <option value="none">None</option>
+                    </select>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="footer" style="background-color: #363636; padding: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="font-size: 20px; color: white;">
+                        <ul style="list-style: none; padding: 0;">
+                            <li><a href="carAdvisor_index.html" style="color: white;">Home page</a></li>
+                            <li><a href="carConsulting.html" style="color: white;">Car consulting</a></li>
+                            <li><a href="car_selling.html" style="color: white;">Car Selling</a></li>
+                            <li><a href="car_news.html" style="color: white;">Car news</a></li>
+                            <li><a href="AboutUS.html" style="color: white;">About Us</a></li>
+                            <li><a href="contactUsPage.html" style="color: white;">Contact Us</a></li>
+                            <li><a href="feedBack.html" style="color: white;">questionnaire</a></li>
+                            <li><a href="funPange.html" style="color: white;">funPange</a></li>
+                            <li><a href="calculation_page.html" style="color: white;">calculation page</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="font-family: Arial, Helvetica, sans-serif; color: white; line-height: 1.5;">
+                        <strong>Sultan Qaboos University</strong><br>
+                        <a href="https://www.squ.edu.om/" style="color: white;">Sultan Qaboos University</a><br>
+                        <a href="https://www.squ.edu.om/science" style="color: white;">College Of Science</a><br>
+                        <a href="https://www.squ.edu.om/science/Departments/Computer-Science" style="color: white;">Computer Science Department</a><br>
+                        COMP3700 SP24 Project<br>
+                        Members:<br>
+                        Mohammed AL TAMAMI<br>
+                        Mohammed AL RIYAMI<br>
+                        Mohammed AL HARTHY<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    </body>
+    </html>

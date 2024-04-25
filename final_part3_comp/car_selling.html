@@ -1,0 +1,469 @@
+<html>
+    
+<title>CarSelling</title>
+<head>
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="externalStyle.css">
+        <style>
+            navbar-brand {
+            color: gray; 
+        }
+            .card {
+            margin-bottom: 20px;
+            background-color: #212529;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+        navbar-brand {
+            color: gray; 
+        }
+             div.first {
+                    position: relative;
+                    width: 100%;
+                    height: 350px; 
+                    background-image: url('cars.jpg'); 
+                    background-size: cover; 
+                    background-position: 50% 67%; 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: 100px;
+                    text-align: center;
+                    font-family: sans-serif;
+                    
+                }
+
+                .margin{margin-left: 350px;}
+
+                .display{display: flex;}
+
+        /* Styles for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+        /* Styles for the overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+
+        /* Buy Section Card */
+        #buySectionCard {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }        
+        </style>
+
+
+
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container" style="margin-right: auto;">
+      <a class="navbar-brand" href="carAdvisor_index.html" >Car Advisor</a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carConsulting.html">Car Consulting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="car_selling.html">Car Selling</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="car_news.html">Car News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="AboutUS.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contactUsPage.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="feedBack.html">Questionnaire Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="calculation_page.html">Calculation Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="funPange.html">Fun page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="signin.html">sign in</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<body>
+
+
+    <div class="first">
+        <div> 
+            <p style="font-family: Arial, Helvetica, sans-serif; color: rgb(167, 156, 156);">Car Selling <br> <span style="font-size: 50px; color: gray"> <em>sell Cars marketplace</em> </span></p>
+        </div>
+      </div>
+      <br>
+      <h3 style="color: aliceblue;">Search Car Model</h3>
+      <input type="text" id="carNewsSearch" onkeyup="searchCarNews()" placeholder="Search by model">
+      <br>
+      <br>
+
+      <a href="calculation_page.html" style="display: block; text-align: center; margin-top: 20px;">
+        <button style="max-width: 600px;margin: 0 auto;background-color: #4949df;padding: 20px;border-radius: 8px;margin-top: 20px; align-items: center;">
+          Go to our calculation page
+        </button>
+      </a>
+      
+      <div class="container mt-5">
+        <div class="row">
+            <!-- Popup content -->
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <p>Enter your age</p>
+                <input type="text" id="age-input">
+                <button onclick="displayPrice()">Check Discount</button>
+                <h2>Popup Content</h2>
+                <p id="popupMessage">This is the content of the popup. You can put any HTML content here.</p>
+                <button onclick="closePopup()">close</button>
+            </div>
+
+            <!-- Car cards -->
+            <div class="col-lg-6 mb-4" onclick="selectCar('Chevrolet Silvarado', 7500)">
+                <div class="card">
+                    <img src="gt3rs.jpg" class="card-img-top" alt="Porsche 911 GT3 RS">
+                    <div class="card-body">
+                        <h5 class="card-title">Porsche 911 GT3 RS</h5>
+                        <p class="card-text">Car name: Porsche 911 GT3 RS 2021</p>
+                        <p class="card-text">Mileage: 10,000 KM</p>
+                        <p class="card-text">Condition: Almost new, 2 months of use only</p>
+                        <p class="card-text">Features and Options: Carbon fiber package</p>
+                        <p class="card-text">Price: 100,000 OMR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4" onclick="selectCar('Chevrolet Silvarado', 7500)">
+                <div class="card">
+                    <img src="silverado.jpg" class="card-img-top" alt="Chevrolet Silvarado">
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet Silvarado</h5>
+                        <p class="card-text">Car name: Chevrolet Silvarado Z71 2018</p>
+                        <p class="card-text">Mileage: 100,000 km</p>
+                        <p class="card-text">Condition: Used, fair condition</p>
+                        <p class="card-text">Features and Options: Full option</p>
+                        <p class="card-text">Customization or Upgrades:
+                            <ul>
+                                <li>Race intakes and filters</li>
+                                <li>FOX suspension systems</li>
+                                <li>Method wheels</li>
+                            </ul>
+                        </p>
+                        <p class="card-text">Price: 7,500 OMR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4" onclick="selectCar('Hyundai Elantra', 7200)">
+                <div class="card">
+                    <img src="elantra.jpg" class="card-img-top" alt="Hyundai Elantra">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai Elantra</h5>
+                        <p class="card-text">Car name: Hyundai Elantra 2022</p>
+                        <p class="card-text">Mileage: 30,000 km</p>
+                        <p class="card-text">Condition: Used, good condition</p>
+                        <p class="card-text">Features and Options: Full option limited edition</p>
+                        <p class="card-text">Customization or Upgrades: None</p>
+                        <p class="card-text">Price: 7,200 OMR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4" onclick="selectCar('Toyota Supra', 18000)">
+                <div class="card">
+                    <img src="supra.jpg" class="card-img-top" alt="Toyota Supra">
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota Supra</h5>
+                        <p class="card-text">Car name: Toyota Supra MK4 1994</p>
+                        <p class="card-text">Mileage: 50,000 km</p>
+                        <p class="card-text">Condition: Used for short time</p>
+                        <p class="card-text">Features and Options: Rare car imported from Japan</p>
+                        <p class="card-text">Customization or Upgrades: None</p>
+                        <p class="card-text">Price: 18,000 OMR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4" onclick="selectCar('Nissan Skyline GTR', 25000)">
+                <div class="card">
+                    <img src="gtr.jpg" class="card-img-top" alt="Nissan Skyline GTR">
+                    <div class="card-body">
+                        <h5 class="card-title">Nissan Skyline GTR</h5>
+                        <p class="card-text">Car name: Nissan Skyline GTR R33 1999</p>
+                        <p class="card-text">Mileage: 20,000 KM</p>
+                        <p class="card-text">Condition: Clean and low mileage</p>
+                        <p class="card-text">Features and Options: Super rare and well-kept as a collector's car</p>
+                        <p class="card-text">Customization or Upgrades:
+                            <ul>
+                                <li>Single Turbo kit</li>
+                            </ul>
+                        </p>
+                        <p class="card-text">Price: 25,000 OMR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4" onclick="selectCar('Honda Civic', 3000)">
+                <div class="card">
+                    <img src="civic.jpg" class="card-img-top" alt="Honda Civic">
+                    <div class="card-body">
+                        <h5 class="card-title">Honda Civic</h5>
+                        <p class="card-text">Car name: Honda Civic Type R</p>
+                        <p class="card-text">Mileage: 90,000</p>
+                        <p class="card-text">Condition: Used</p>
+                        <p class="card-text">Features and Options: Race car build</p>
+                        <p class="card-text">Customization or Upgrades:
+                            <ul>
+                                <li>Engine head replaced</li>
+
+                            </ul>
+                        </p>
+                        <p class="card-text">Price: 3,000 OMR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                <!--add the table of content-->
+            
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Car</th>
+                        <th>Car Owner</th>
+                        <th>Contact</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Porsche 911 GT3 RS</td>
+                        <td>John Doe</td>
+                        <td>john.doe@example.com</td>
+                      </tr>
+                      <tr>
+                        <td>Chevrolet Silvarado</td>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@example.com</td>
+                      </tr>
+                      <tr>
+                        <td>Hyundai Elantra</td>
+                        <td>Michael Johnson</td>
+                        <td>michael.johnson@example.com</td>
+                      </tr>
+                      <tr>
+                        <td>Toyota Supra</td>
+                        <td>Sarah Brown</td>
+                        <td>sarah.brown@example.com</td>
+                      </tr>
+                      <tr>
+                        <td>Nissan Skyline GTR</td>
+                        <td>David Lee</td>
+                        <td>david.lee@example.com</td>
+                      </tr>
+                      <tr>
+                        <td>Honda Civic</td>
+                        <td>Emily Wilson</td>
+                        <td>emily.wilson@example.com</td>
+                      </tr>
+                    </tbody>
+                  </table>
+    
+
+        <!-- Buy Section Card -->
+        <div class="container mt-5" id="buySectionCard">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Buy Section</h5>
+                            <p class="card-text" id="selectedCar"></p>
+                            <p class="card-text" id="selectedCarPrice"></p>
+                            <hr>
+                            <p>Enter your age to see the discounted price:</p>
+                            <input type="text" id="buyAgeInput">
+                            <button onclick="displayDiscountedPrice()">Check Discount</button>
+                            <p class="card-text" id="discountedPrice"></p>
+                            <button onclick="closeBuySection()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="background-color: #363636; padding: 20px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="font-size: 20px; color: white;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li><a href="carAdvisor_index.html" style="color: white;">Home page</a></li>
+                                <li><a href="carConsulting.html" style="color: white;">Car consulting</a></li>
+                                <li><a href="car_selling.html" style="color: white;">Car Selling</a></li>
+                                <li><a href="car_news.html" style="color: white;">Car news</a></li>
+                                <li><a href="AboutUS.html" style="color: white;">About Us</a></li>
+                                <li><a href="contactUsPage.html" style="color: white;">Contact Us</a></li>
+                                <li><a href="feedBack.html" style="color: white;">questionnaire</a></li>
+                                <li><a href="funPange.html" style="color: white;">funPange</a></li>
+                                <li><a href="calculation_page.html" style="color: white;">calculation page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="font-family: Arial, Helvetica, sans-serif; color: white; line-height: 1.5;">
+                            <strong>Sultan Qaboos University</strong><br>
+                            <a href="https://www.squ.edu.om/" style="color: white;">Sultan Qaboos University</a><br>
+                            <a href="https://www.squ.edu.om/science" style="color: white;">College Of Science</a><br>
+                            <a href="https://www.squ.edu.om/science/Departments/Computer-Science" style="color: white;">Computer Science Department</a><br>
+                            COMP3700 SP24 Project<br>
+                            Members:<br>
+                            Mohammed AL TAMAMI<br>
+                            Mohammed AL RIYAMI<br>
+                            Mohammed AL HARTHY<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                         
+
+                
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+                                        <script>
+                                            // Function to open the popup
+                                            function openPopup() {
+                                                document.getElementById("overlay").style.display = "block";
+                                                document.getElementById("popup").style.display = "block";
+                                            }
+                                    
+                                            // Function to close the popup
+                                            function closePopup() {
+                                                document.getElementById("overlay").style.display = "none";
+                                                document.getElementById("popup").style.display = "none";
+                                            }
+                                    
+                                            // Function to calculate and display discounted price
+                                            function displayPrice(){
+                                                let ageValue = parseInt(document.getElementById("age-input").value);
+                                                let price = parseInt(document.getElementById("popupButton").value);
+                                                let discountedPrice;
+                                    
+                                                if(ageValue > 60){
+                                                    discountedPrice = price - (price * 0.15); // 15% discount for age over 60
+                                                } else {
+                                                    discountedPrice = price;
+                                                }
+                                    
+                                                document.getElementById("popupMessage").innerHTML = "Your discounted price is: $" + discountedPrice;
+                                            }
+                                    
+                                            function selectCar(carName, carPrice) {
+                                                // Display the buy section card
+                                                document.getElementById("buySectionCard").style.display = "block";
+                                    
+                                                // Set the selected car details
+                                                document.getElementById("selectedCar").textContent = "Selected Car: " + carName;
+                                                document.getElementById("selectedCarPrice").textContent = "Price: " + carPrice + " OMR";
+                                            }
+                                    
+                                            // Function to calculate and display discounted price in the buy section
+                                            function displayDiscountedPrice() {
+                                                let ageValue = parseInt(document.getElementById("buyAgeInput").value);
+                                                let carPrice = parseInt(document.getElementById("selectedCarPrice").textContent.split(":")[1].trim());
+                                                let discountedPrice;
+                                    
+                                                if (ageValue > 60) {
+                                                    discountedPrice = carPrice - (carPrice * 0.15); // 15% discount for age over 60
+                                                } else {
+                                                    discountedPrice = carPrice;
+                                                }
+                                    
+                                                document.getElementById("discountedPrice").innerHTML = "Your discounted price is: " + discountedPrice + " OMR";
+                                            }
+                                    
+                                            // Function to close the buy section
+                                            function closeBuySection() {
+                                                document.getElementById("buySectionCard").style.display = "none";
+                                            }
+                                           
+
+                                        </script>
+                                        
+
+</body>
+
+
+
+</html>

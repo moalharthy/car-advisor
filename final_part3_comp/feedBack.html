@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questionnaire</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- External CSS -->
+        <link rel="stylesheet" href="externalStyle.css">
+        <!-- Internal CSS -->
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("nissan-gt-r_100758128.jpg");
+            background-size: 100%; /* Ensure background image covers the entire viewport */
+        }
+    
+        /* Styles for input elements when hovered */
+        input:hover {
+            background: rgb(87, 255, 115); /* Change background color on hover */
+            color: red; /* Change text color on hover */
+        }
+    
+        /* Styles for input elements when focused */
+        input:focus {
+            background: rgb(240, 255, 171); /* Change background color when focused */
+            color: blue; /* Change text color when focused */
+        }
+    
+        /* Styles for textarea elements when hovered */
+        textarea:hover {
+            background: rgb(87, 255, 115); /* Change background color on hover */
+            color: red; /* Change text color on hover */
+        }
+    
+        /* Styles for textarea elements when focused */
+        textarea:focus {
+            background: rgb(240, 255, 171); /* Change background color when focused */
+            color: blue; /* Change text color when focused */
+        }
+    
+        /* Styles for button elements when hovered */
+        button:hover {
+            background: rgb(87, 255, 115); /* Change background color on hover */
+            color: red; /* Change text color on hover */
+        }
+    
+        /* Styles for button elements when focused */
+        button:focus {
+            background: rgb(240, 255, 171); /* Change background color when focused */
+            color: blue; /* Change text color when focused */
+        }
+    
+        /* Container styles */
+        .container {
+            max-width: 850px; /* Limit container width */
+            margin: 50px auto; /* Center container horizontally */
+            background-color: rgb(69, 70, 160); /* Set container background color */
+            padding: 20px; /* Add padding inside container */
+            border-radius: 10px; /* Add border radius to container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth effect */
+        }
+    
+        /* Heading styles */
+        h1 {
+            text-align: center; /* Center align heading */
+            color: #333; /* Set heading color */
+        }
+    
+        /* Group styles */
+        .group {
+            margin-bottom: 20px; /* Add margin bottom to group elements */
+        }
+    
+        /* Input styles */
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%; /* Set input width to 100% */
+            padding: 8px; /* Add padding to input */
+            border: 1px solid #ccc; /* Add border to input */
+            border-radius: 4px; /* Add border radius to input */
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+            font-size: 16px; /* Set font size for input */
+        }
+    
+        /* Radio button styles */
+        .group input[type="radio"] {
+            display: inline-block; /* Display radio buttons inline */
+            margin-right: 10px; /* Add some spacing between the buttons */
+        }
+    
+        /* Checkbox and radio button styles */
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px; /* Add margin-right to checkbox and radio button */
+        }
+    
+        /* Button styles */
+        button {
+            background-color: #4caf50; /* Set button background color */
+            color: #fff; /* Set button text color */
+            border: none; /* Remove button border */
+            padding: 10px 20px; /* Add padding to button */
+            border-radius: 4px; /* Add border radius to button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            font-size: 16px; /* Set font size for button */
+        }
+    
+        /* Button styles when hovered */
+        button:hover {
+            background-color: #45a049; /* Change button background color on hover */
+        }
+    </style>
+    
+
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" style="margin-right: auto;" >
+                <a class="navbar-brand" href="index.html">Car Advisor</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav" >
+                    <ul class="navbar-nav ms-auto" >
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carConsulting.html">Car Consulting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="car_selling.html">Car Selling</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="car_news.html">Car News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="AboutUS.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactUsPage.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedBack.html">Questionnaire Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculation_page.html">Calculation Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="funPange.html">Fun page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin.html">sign in</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<div class="container">
+    <div id="current-time" style=" color: white; margin-top: 20px;">Time</div>
+    <h1>Customer Feedback</h1>
+    <form id="questionnaire">
+        <!-- Name input -->
+        <div class="form-group">
+            <label for="name" style="font-weight: bold;">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <br>
+    
+        <!-- Country input -->
+        <div class="group">
+            <label for="country" style="font-weight: bold;">Country:</label>
+            <input type="country" id="country" name="country" required>
+        </div>
+    
+        <!-- Overall Experience select -->
+        <div class="group">
+            <label for="experience" style="font-weight: bold;">Overall Experience:</label>
+            <select id="experience" name="experience" required>
+                <option value="">Select</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="average">Average</option>
+                <option value="poor">Poor</option>
+            </select>
+        </div>
+    
+        <!-- Age radio buttons -->
+        <div class="group">
+            <label for="age" style="font-weight: bold;">Age:</label>
+            <input type="radio" id="under18" name="age" value="under18" required>
+            <label for="under18">Under 18</label>
+            <input type="radio" id="18to65" name="age" value="18to65">
+            <label for="18to65">18-65</label>
+            <input type="radio" id="over65" name="age" value="over65">
+            <label for="over65">Over 65</label>
+        </div>
+    
+        <!-- Comments textarea -->
+        <div class="group">
+            <label for="comments" style="font-weight: bold;">Comments:</label>
+            <p>Briefly describe your experience or problems</p>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+    
+        <!-- Rating radio buttons -->
+        <div class="group">
+            <legend style="font-weight: bold;">Rate the website out of 10:</legend>
+            <label><input type="radio" name="rating" value="1"> 1</label>
+            <label><input type="radio" name="rating" value="2"> 2</label>
+            <label><input type="radio" name="rating" value="3"> 3</label>
+            <label><input type="radio" name="rating" value="4"> 4</label>
+            <label><input type="radio" name="rating" value="5"> 5</label>
+            <label><input type="radio" name="rating" value="6"> 6</label>
+            <label><input type="radio" name="rating" value="7"> 7</label>
+            <label><input type="radio" name="rating" value="8"> 8</label>
+            <label><input type="radio" name="rating" value="9"> 9</label>
+            <label><input type="radio" name="rating" value="10"> 10</label>
+            <!-- Add options for ratings 1-10 -->
+        </div>
+    
+        <!-- Checkbox for news -->
+        <div class="group">
+            <input type="checkbox" id="news" name="news">
+            <label for="news">Receive our latest news</label>
+        </div>
+    
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+    </form>
+    
+</div>
+<div class="footer" style="background-color: #363636; padding: 20px;">
+    <div>
+        <div class="row">
+            <div class="col-md-6">
+                <div style="font-size: 20px; color: white;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="carAdvisor_index.html" style="color: white;">Home page</a></li>
+                        <li><a href="carConsulting.html" style="color: white;">Car consulting</a></li>
+                        <li><a href="car_selling.html" style="color: white;">Car Selling</a></li>
+                        <li><a href="car_news.html" style="color: white;">Car news</a></li>
+                        <li><a href="AboutUS.html" style="color: white;">About Us</a></li>
+                        <li><a href="contactUsPage.html" style="color: white;">Contact Us</a></li>
+                        <li><a href="feedBack.html" style="color: white;">questionnaire</a></li>
+                        <li><a href="funPange.html" style="color: white;">funPange</a></li>
+                        <li><a href="calculation_page.html" style="color: white;">calculation page</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="font-family: Arial, Helvetica, sans-serif; color: white; line-height: 1.5;">
+                    <strong>Sultan Qaboos University</strong><br>
+                    <a href="https://www.squ.edu.om/" style="color: white;">Sultan Qaboos University</a><br>
+                    <a href="https://www.squ.edu.om/science" style="color: white;">College Of Science</a><br>
+                    <a href="https://www.squ.edu.om/science/Departments/Computer-Science" style="color: white;">Computer Science Department</a><br>
+                    COMP3700 SP24 Project<br>
+                    Members:<br>
+                    Mohammed AL TAMAMI<br>
+                    Mohammed AL RIYAMI<br>
+                    Mohammed AL HARTHY<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('questionnaire');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (validate()) {
+                // Submit form data to server
+                alert('Form submitted successfully!');
+                form.reset();
+            }
+        });
+
+        function validate() {
+            const nameInput = document.getElementById('name');
+            const country = document.getElementById('country');
+            const experience = document.getElementById('experience');
+            const comments = document.getElementById('comments');
+            const ratingInputs = document.querySelectorAll('input[name="rating"]');
+            let ratingChecked = false;
+            const ageInputs = document.querySelectorAll('input[name="age"]');
+
+            // Name validation: should contain only alphabets and spaces
+            const nameRegex = /^[a-zA-Z\s]+$/;
+            if (!nameRegex.test(nameInput.value)) {
+                alert('Please enter a valid name.');
+                nameInput.focus();
+                return false;
+            }
+            // Age validation: at least one age should be checked
+            ageInputs.forEach(input => {
+                if (input.checked) {
+                    ageChecked = true;
+                }
+            });
+
+            if (!ageChecked) {
+                alert('Please select your age.');
+                return false;
+            }
+
+
+            // Experience validation: should not be "Select"
+            if (experience.value === '') {
+                alert('Please select your experience.');
+                experience.focus();
+                return false;
+            }
+            if (comments.value.trim() === "") {
+                alert('Please write your comment');
+                comments.focus();
+                return false;
+            }
+
+            // Rating validation: at least one rating should be checked
+            ratingInputs.forEach(input => {
+                if (input.checked) {
+                    ratingChecked = true;
+                }
+            });
+
+            if (!ratingChecked) {
+                alert('Please rate the website out of 10.');
+                return false;
+            }
+
+            return true;
+        }
+                    // Function to get current time and display it
+        function getCurrentTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const timeString = hours + ':' + minutes;
+            document.getElementById('current-time').innerText = 'Current Time: ' + timeString;
+        }
+
+        // Call getCurrentTime function initially and every second
+        getCurrentTime();
+        setInterval(getCurrentTime, 1000);
+        
+    
+    });
+</script>
+</body>
+</html>
